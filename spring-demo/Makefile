@@ -27,7 +27,7 @@ docker-build: build
 	docker images
 
 docker-run: docker-build
-	docker run --name spring-demo --platform=linux/amd64 -td -p 80:8080 spring-demo
+	docker run --name spring-demo --platform=linux/amd64 -td -p 90:8080 spring-demo
 	docker ps
 
 docker-clean:

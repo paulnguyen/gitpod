@@ -1,0 +1,36 @@
+
+version: "3"
+
+services:
+  phptest:
+    image: paulnguyen/phptest
+    platform: linux/amd64
+    volumes:
+      - /tmp:/tmp
+    networks:
+      - network   
+    ports:
+      - 80    
+    restart: always     
+  lb:
+    image: eeacms/haproxy
+    platform: linux/amd64
+    depends_on:
+    - phptest
+    ports:
+    - "80:5000"
+    - "1936:1936"
+    environment:
+      BACKENDS: "phptest"
+      DNS_ENABLED: "true"
+      LOG_LEVEL: "info"
+    networks:
+      - network
+
+volumes:
+  schemas:
+    external: false
+
+networks:
+  network:
+    driver: bridge

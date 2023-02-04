@@ -2,13 +2,16 @@
 all: docker-clean 
 
 up:
-	docker-compose up -d
+	docker-compose up --scale phptest=4 -d
 
 down:
 	docker-compose down
 
 network-prune:
 	docker network prune
+
+network:
+	docker network create --driver bridge phptest
 
 docker-build: 
 	docker build -t phptest .
@@ -39,16 +42,8 @@ docker-stop:
 	docker rm phptest
 
 docker-shell:
-	docker exec -it phptest bash 
-
-compose-network:
-	docker network create --driver bridge dck_network
-
-compose-up:
-	docker-compose up --scale phptest=2 -d
-
-compose-down:
-	docker-compose down 	
+	docker exec -it ${id)} bash 
+	
 
 lb-stats:
 	echo "user = admin | password = admin"

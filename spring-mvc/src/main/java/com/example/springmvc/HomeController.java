@@ -10,9 +10,9 @@ public class HomeController {
     @RequestMapping("/")
     public @ResponseBody String greeting() {
 
-        ValAndVarUserDemo.print() ;
+        //ValAndVarUserDemo.print() ;
         //FieldLevelGetterSetterDemo.print() ;
-        //GetterSetterUserDemo.print() ;
+        GetterSetterUserDemo.print() ;
         //ConstructorUserDemo.print() ;
         //DataUserDemo.print() ;
         //NonNullUserDemo.print() ;

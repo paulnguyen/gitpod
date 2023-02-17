@@ -13,7 +13,7 @@ public class HomeController {
         //ValAndVarUserDemo.print() ;
         //FieldLevelGetterSetterDemo.print() ;
         //GetterSetterUserDemo.print() ;
-        ConstructorUserDemo.print() ;
+        //ConstructorUserDemo.print() ;
         //DataUserDemo.print() ;
         //NonNullUserDemo.print() ;
 

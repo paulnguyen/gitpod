@@ -37,11 +37,13 @@ public class GreetingController {
 
     @GetMapping("/greeting-with-session")
     public String greeting_with_session(@RequestParam(name="name", required=false) String name, Model model, HttpSession session) {
+        System.out.println( "WITH SESSION: Arg Name=" + name) ;
         if (name!=null) {
             this.name = name ;
             session.setAttribute( "name", name) ;
         } else {
             String session_value = (String) session.getAttribute("name") ;
+            System.out.println( "WITH SESSION: Session Value=" + session_value) ;
             if ( session_value != null ) {
                 this.name = session_value ;
             } else {

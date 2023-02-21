@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Value;
 
 /*
     RestTemplate JavaDoc:
@@ -28,6 +29,8 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/")
 public class ConsoleController {
+
+    private @Value("${api.host}") String APIHOST ;
 
     @GetMapping
     public String getAction(@ModelAttribute("command") ConsoleCommand command,
@@ -48,7 +51,7 @@ public class ConsoleController {
 
         if (action.equals("PING")) {
             message = "PING";
-            resourceUrl = "http://localhost:8080/ping";
+            resourceUrl = APIHOST + "/ping";
             // get response as string
             ResponseEntity<String> stringResponse = restTemplate.getForEntity(resourceUrl, String.class);
             message = stringResponse.getBody();
@@ -68,7 +71,7 @@ public class ConsoleController {
         }
         if (action.equals("NEW CARD")) {
             message = "";
-            resourceUrl = "http://localhost:8080/cards";
+            resourceUrl = APIHOST + "/cards";
             // get response as POJO
             String emptyRequest = "" ;
             HttpEntity<String> newCardRequest = new HttpEntity<String>(emptyRequest) ;
@@ -86,7 +89,7 @@ public class ConsoleController {
         }
         if (action.equals("NEW ORDER")) {
             message = "";
-            resourceUrl = "http://localhost:8080/order/register/5012349";
+            resourceUrl = APIHOST + "/order/register/5012349";
             // get response as POJO
             Order orderRequest = new Order() ;
             orderRequest.setDrink("Caffe Latte") ;
@@ -107,7 +110,7 @@ public class ConsoleController {
         }
         if (action.equals("ACTIVATE CARD")) {
             message = "";
-            resourceUrl = "http://localhost:8080/card/activate/"+command.getCardnum()+"/"+command.getCardcode();
+            resourceUrl = APIHOST + "/card/activate/"+command.getCardnum()+"/"+command.getCardcode();
             // get response as POJO
             String emptyRequest = "" ;
             HttpEntity<String> newCardRequest = new HttpEntity<String>(emptyRequest) ;
@@ -125,7 +128,7 @@ public class ConsoleController {
         }
         if (action.equals("PAY")) {
             message = "";
-            resourceUrl = "http://localhost:8080/order/register/5012349/pay/"+command.getCardnum() ;
+            resourceUrl = APIHOST + "/order/register/5012349/pay/"+command.getCardnum() ;
             System.out.println(resourceUrl) ;
             // get response as POJO
             String emptyRequest = "" ;

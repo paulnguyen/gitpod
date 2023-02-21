@@ -18,8 +18,8 @@ public class FieldLevelGetterSetterDemo {
         this.userAge=userAge;
     }
 
-    public void setUserId( int val ) { this.userId = val ; }
-    public int getUserId() { return this.userId ; }
+    //public void setUserId( int val ) { this.userId = val ; }
+    //public int getUserId() { return this.userId ; }
 
     public static void print()
     {

@@ -4,7 +4,7 @@ clean:
 compile:
 	mvn compile
 
-run:
+run: compile
 	mvn spring-boot:run
 
 build:

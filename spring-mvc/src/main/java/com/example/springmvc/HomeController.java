@@ -11,7 +11,7 @@ public class HomeController {
     public @ResponseBody String greeting() {
 
         //ValAndVarUserDemo.print() ;
-        FieldLevelGetterSetterDemo.print() ;
+        //FieldLevelGetterSetterDemo.print() ;
         //GetterSetterUserDemo.print() ;
         //ConstructorUserDemo.print() ;
         //DataUserDemo.print() ;

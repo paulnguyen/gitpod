@@ -24,7 +24,7 @@ services:
       BACKENDS: "springmvc:8080"
       DNS_ENABLED: "true"
       LOG_LEVEL: "info"
-      COOKIES_ENABLED: "true"
+      COOKIES_ENABLED: "false"
     networks:
       - network
 

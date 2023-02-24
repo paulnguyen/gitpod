@@ -26,13 +26,17 @@ public class GumballMachineController {
     @GetMapping
     public String getAction( @ModelAttribute("command") GumballCommand command, 
                             Model model, HttpSession session) {
-      
+
         GumballModel g = new GumballModel() ;
         g.setModelNumber( "SB102927") ;
         g.setSerialNumber( "2134998871109") ;
         model.addAttribute( "gumball", g ) ;
-        
-        GumballMachine gm = new GumballMachine(10) ;
+
+        GumballMachine gm = (GumballMachine) session.getAttribute("gumball") ;
+        if ( gm == null ) {
+            gm = new GumballMachine(10) ;
+        }
+      
         String message = gm.toString() ;
         session.setAttribute( "gumball", gm) ;
         String session_id = session.getId() ;

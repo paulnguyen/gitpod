@@ -62,6 +62,9 @@ lb-stats:
 lb-test:
 	open http://localhost
 
+jumpbox:
+	docker run --network spring-gumball-v10_network --name jumpbox -t -d ubuntu
+
 
 # Pod
 

@@ -24,7 +24,7 @@ services:
       BACKENDS: "gumball"
       BACKENDS_PORT: "8080"
       DNS_ENABLED: "true"
-      COOKIES_ENABLED: "false"
+      COOKIES_ENABLED: "true"
       LOG_LEVEL: "info"
     networks:
       - network

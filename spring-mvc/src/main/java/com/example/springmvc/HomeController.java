@@ -8,16 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController {
 
     @RequestMapping("/")
-    public @ResponseBody String greeting() {
-
-        //ValAndVarUserDemo.print() ;
-        FieldLevelGetterSetterDemo.print() ;
-        //GetterSetterUserDemo.print() ;
-        //ConstructorUserDemo.print() ;
-        //DataUserDemo.print() ;
-        //NonNullUserDemo.print() ;
-
-        return "Lombok Demo";
+    public @ResponseBody String ping() {
+        return "Health Check Ok!";
     }
 
 }

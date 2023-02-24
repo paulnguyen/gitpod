@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "e0762451-7a1a-4452-9c8e-06f1eb979b98",
+		"name": "STARBUCKS (GITPOD)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1307988"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/ping",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"cardnum\", response.cardNumber);",
+							"postman.setGlobalVariable(\"cardcode\", response.cardCode);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/cards",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/cards",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Card",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/card/{{cardnum}}",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"card",
+						"{{cardnum}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Card",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/card/activate/{{cardnum}}/{{cardcode}}",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"card",
+						"activate",
+						"{{cardnum}}",
+						"{{cardcode}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"orderid\", response.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"drink\": \"Caffe Latte\",\n\t\"milk\":  \"Whole\",\n\t\"size\":  \"Grande\"\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{host}}/order/register/5012349",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"order",
+						"register",
+						"5012349"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay for Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"orderid\", response.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"drink\": \"Caffe Latte\",\n\t\"milk\":  \"Whole\",\n\t\"size\":  \"Grande\"\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{host}}/order/register/5012349/pay/{{cardnum}}",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"order",
+						"register",
+						"5012349",
+						"pay",
+						"{{cardnum}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"drink\": \"Caffe Latte\",\n\t\"milk\":  \"Whole\",\n\t\"size\":  \"Grande\"\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{host}}/orders",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"drink\": \"Caffe Latte\",\n\t\"milk\":  \"Whole\",\n\t\"size\":  \"Grande\"\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{host}}/order/register/5012349",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"order",
+						"register",
+						"5012349"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clear Order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"drink\": \"Caffe Latte\",\n\t\"milk\":  \"Whole\",\n\t\"size\":  \"Grande\"\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{host}}/order/register/5012349",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"order",
+						"register",
+						"5012349"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Orders",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"drink\": \"Caffe Latte\",\n\t\"milk\":  \"Whole\",\n\t\"size\":  \"Grande\"\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{host}}/orders",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Cards",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/cards",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

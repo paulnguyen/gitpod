@@ -1,5 +1,5 @@
 apiVersion: networking.k8s.io/v1
-kind: "Ingress"
+kind: Ingress
 metadata:
   name: spring-gumball-ingress
   namespace: default

@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=ScreenDecorator
+comment0.text=Decorator\ for\ Fall\ 2019\ \ *
+comment1.params=s
+comment1.target=ScreenDecorator(IScreen)
+comment2.params=
+comment2.target=java.lang.String\ display()
+comment3.params=
+comment3.target=java.lang.String\ name()
+comment4.params=x\ y
+comment4.target=void\ touch(int,\ int)
+comment5.params=
+comment5.target=void\ next()
+comment6.params=
+comment6.target=void\ prev()
+comment7.params=s\ n
+comment7.target=void\ setNext(IScreen,\ java.lang.String)
+comment8.params=s\ n
+comment8.target=void\ setPrev(IScreen,\ java.lang.String)
+comment9.params=
+comment9.target=boolean\ supportsLandscape()
+numComments=10

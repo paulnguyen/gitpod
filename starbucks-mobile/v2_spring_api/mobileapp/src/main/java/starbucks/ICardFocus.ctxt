@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=ICardFocus
+comment0.text=\n\ Card\ Focus\ Interface\n
+comment1.params=
+comment1.target=void\ setFocus()
+comment1.text=Set\ Focus\ to\ Me
+comment2.params=
+comment2.target=void\ unsetFocus()
+comment2.text=Remove\ Focus\ on\ Me
+comment3.params=
+comment3.target=void\ reset()
+comment3.text=Reset\ Content
+comment4.params=
+comment4.target=java.lang.String\ display()
+comment4.text=\n\ Get\ Display\ Component\ Contents\n\ @return\ Display\ Conents\n
+numComments=5

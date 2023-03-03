@@ -1,0 +1,30 @@
+#BlueJ class context
+comment0.target=StarbucksAPI
+comment0.text=\ \n\n\ \ \ \ REST\ CLIENT\:\ \ \n\n\ \ \ \ http\://kong.github.io/unirest-java\n\ \ \ \ https\://www.baeldung.com/unirest\n\ \ \ \ http\://stleary.github.io/JSON-java/index.html\n\ \ \ \ https\://www.programcreek.com/java-api-examples/?api\=com.mashape.unirest.http.Unirest\n\ \ \ \ http\://javadox.com/com.mashape.unirest/unirest-java/1.4.9/overview-summary.html\n\n
+comment1.params=
+comment1.target=StarbucksAPI()
+comment10.params=regid\ cardnum
+comment10.target=StarbucksAPI.Card\ payForOrder(java.lang.String,\ java.lang.String)
+comment11.params=
+comment11.target=void\ getOrders()
+comment12.params=
+comment12.target=void\ clearOrders()
+comment13.params=
+comment13.target=void\ clearCards()
+comment2.params=
+comment2.target=void\ ping()
+comment3.params=
+comment3.target=StarbucksAPI.Card\ newCard()
+comment4.params=
+comment4.target=void\ getCards()
+comment5.params=cardnum
+comment5.target=StarbucksAPI.Card\ getCard(java.lang.String)
+comment6.params=num\ code
+comment6.target=void\ activateCard(java.lang.String,\ java.lang.String)
+comment7.params=regid
+comment7.target=void\ newOrder(java.lang.String)
+comment8.params=regid
+comment8.target=void\ getOrder(java.lang.String)
+comment9.params=regid
+comment9.target=void\ clearOrder(java.lang.String)
+numComments=14

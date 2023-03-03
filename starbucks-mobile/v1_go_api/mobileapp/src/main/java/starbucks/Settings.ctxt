@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Settings
+comment0.text=Settings\ Screen
+comment1.params=
+comment1.target=Settings()
+comment1.text=Constructor
+comment2.params=
+comment2.target=java.lang.String\ display()
+comment2.text=\n\ Return\ Screen\ Contents\n\ @return\ Screen\ Contents\n
+comment3.params=x\ y
+comment3.target=void\ touch(int,\ int)
+comment3.text=\n\ Handle\ Touch\ Events.\n\ Mainly\ to\ Add\ a\ New\ Card.\n\ \n\ @param\ x\ Touch\ X\n\ @param\ y\ Touch\ Y\n
+numComments=4

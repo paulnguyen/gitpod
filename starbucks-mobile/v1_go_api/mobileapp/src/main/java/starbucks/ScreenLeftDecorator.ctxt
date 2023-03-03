@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=ScreenLeftDecorator
+comment0.text=Decorator\ for\ Fall\ 2019\ \ *
+comment1.params=s
+comment1.target=ScreenLeftDecorator(IScreen)
+comment2.params=
+comment2.target=java.lang.String\ display()
+numComments=3

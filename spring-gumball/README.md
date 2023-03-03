@@ -81,6 +81,16 @@ Custom Login Form Example
 * Configured Spring Session to use Redis as Session Store
 * Added Logout Button to end Session
 
+
+### Version 3.4 (v3.3 + New User Registration)
+
+* Redis In-Memory Database Service
+* Spring Session to Replicate CSRF Tokens
+* Configured Spring Session to use Redis as Session Store
+* Logout Button to end Session
+* Added New User Registration
+
+
 Scaling Out with Spring Sessions
 
 * https://spring.io/projects/spring-session

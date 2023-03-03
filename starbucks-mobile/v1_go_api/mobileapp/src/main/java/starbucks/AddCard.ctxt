@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=AddCard
+comment0.text=\n\ Add\ New\ Card\ Screen\n
+comment1.params=cardid\ cardcode
+comment1.target=AddCard(ICardFocus,\ ICardFocus)
+comment2.params=x\ y
+comment2.target=void\ touch(int,\ int)
+comment2.text=\n\ Screen\ Touch\ C\n\ @param\ x\ X\ coordinate\n\ @param\ y\ Y\ coordinate\n
+comment3.params=
+comment3.target=void\ next()
+comment3.text=\n\ Frame\ Next\ Screen\n
+comment4.params=
+comment4.target=void\ reset()
+comment4.text=\n\ Reset\ Card\n
+comment5.params=
+comment5.target=void\ prev()
+comment5.text=\n\ Frame\ Previous\ Screen\n
+numComments=6

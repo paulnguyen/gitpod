@@ -1,0 +1,196 @@
+Project Name,Package Name,Type Name,Method Name,Implementation Smell,Cause of the Smell,Method start line no
+main,starbucks,PinEntryMachine,setStateTwoPinDigits,Magic Number,The method contains a magic number: 2,130
+main,starbucks,PinEntryMachine,setStateThreePinDigits,Magic Number,The method contains a magic number: 3,150
+main,starbucks,PinEntryMachine,setStateFourPinDigits,Magic Number,The method contains a magic number: 4,169
+main,starbucks,PinEntryMachine,setStateFourPinDigits,Magic Number,The method contains a magic number: 4,169
+main,starbucks,PinEntryMachine,setStateFivePinDigits,Magic Number,The method contains a magic number: 5,207
+main,starbucks,PinEntryMachine,setStateSixPinDigits,Magic Number,The method contains a magic number: 6,226
+main,starbucks,StarbucksAPI,activateCard,Long Statement,The length of the statement "HttpResponse<JsonNode> response=Unirest.post(apiurl + "/card/activate/" + num+ "/"+ code).header("apikey"`apikey).asJson();" is 123.,124
+main,starbucks,StarbucksAPI,activateCard,Magic Number,The method contains a magic number: 200,124
+main,starbucks,StarbucksAPI,newOrder,Long Statement,The length of the statement "HttpResponse<JsonNode> response=Unirest.post(apiurl + "/order/register/" + regid).header("apikey"`apikey).body(payload).asJson();" is 129.,142
+main,starbucks,StarbucksAPI,getOrder,Empty catch clause,The method has an empty catch block.,179
+main,starbucks,StarbucksAPI,clearOrder,Empty catch clause,The method has an empty catch block.,192
+main,starbucks,StarbucksAPI,payForOrder,Long Statement,The length of the statement "HttpResponse<JsonNode> response=Unirest.post(apiurl + "/order/register/" + regid+ "/pay/"+ cardnum).header("apikey"`apikey).asJson();" is 133.,206
+main,starbucks,StarbucksAPI,clearOrders,Empty catch clause,The method has an empty catch block.,252
+main,starbucks,StarbucksAPI,clearCards,Empty catch clause,The method has an empty catch block.,266
+main,starbucks,KeyPad,touch,Complex Conditional,The conditional expression x >= 1 && x <= 3 && y >= 5 && y <= 8 is complex.,29
+main,starbucks,KeyPad,touch,Complex Conditional,The conditional expression y < 8 || (x == 2 && y == 8) is complex.,29
+main,starbucks,KeyPad,touch,Magic Number,The method contains a magic number: 3,29
+main,starbucks,KeyPad,touch,Magic Number,The method contains a magic number: 5,29
+main,starbucks,KeyPad,touch,Magic Number,The method contains a magic number: 8,29
+main,starbucks,KeyPad,touch,Magic Number,The method contains a magic number: 3,29
+main,starbucks,KeyPad,touch,Magic Number,The method contains a magic number: 8,29
+main,starbucks,KeyPad,touch,Magic Number,The method contains a magic number: 8,29
+main,starbucks,KeyPad,touch,Magic Number,The method contains a magic number: 2,29
+main,starbucks,KeyPad,touch,Magic Number,The method contains a magic number: 8,29
+main,starbucks,KeyPad,getKey,Magic Number,The method contains a magic number: 4,67
+main,starbucks,KeyPad,getKey,Magic Number,The method contains a magic number: 3,67
+main,starbucks,KeyPad,getKey,Magic Number,The method contains a magic number: 4,67
+main,starbucks,KeyPad,getKey,Magic Number,The method contains a magic number: 2,67
+main,starbucks,KeyPad,getKey,Magic Number,The method contains a magic number: 4,67
+main,starbucks,KeyPad,getKey,Magic Number,The method contains a magic number: 4,67
+main,starbucks,KeyPad,getKey,Magic Number,The method contains a magic number: 3,67
+main,starbucks,Frame,Frame,Long Method,The method has 110 lines of code.,64
+main,starbucks,AddCard,touch,Complex Conditional,The conditional expression (x == 1 && y == 2) || (x == 2 && y == 2) || (x == 3 && y == 2) is complex.,21
+main,starbucks,AddCard,touch,Magic Number,The method contains a magic number: 2,21
+main,starbucks,AddCard,touch,Magic Number,The method contains a magic number: 3,21
+main,starbucks,AddCard,touch,Magic Number,The method contains a magic number: 2,21
+main,starbucks,AddCard,touch,Magic Number,The method contains a magic number: 2,21
+main,starbucks,AddCard,touch,Magic Number,The method contains a magic number: 2,21
+main,starbucks,AddCard,touch,Magic Number,The method contains a magic number: 3,21
+main,starbucks,AddCard,touch,Magic Number,The method contains a magic number: 2,21
+main,starbucks,AddCard,next,Magic Number,The method contains a magic number: 9,43
+main,starbucks,AddCard,next,Magic Number,The method contains a magic number: 3,43
+main,starbucks,Passcode6,touch,Magic Number,The method contains a magic number: 2,11
+main,starbucks,Passcode6,display,Complex Method,Cyclomatic complexity of the method is 8,39
+main,starbucks,Passcode6,display,Magic Number,The method contains a magic number: 2,39
+main,starbucks,Passcode6,display,Magic Number,The method contains a magic number: 3,39
+main,starbucks,Passcode6,display,Magic Number,The method contains a magic number: 4,39
+main,starbucks,Passcode6,display,Magic Number,The method contains a magic number: 5,39
+main,starbucks,Passcode6,display,Magic Number,The method contains a magic number: 6,39
+main,starbucks,MyCardsOptions,touch,Complex Conditional,The conditional expression (x == 1 && y == 7) || (x == 2 && y == 7) || (x == 3 && y == 7) is complex.,21
+main,starbucks,MyCardsOptions,touch,Magic Number,The method contains a magic number: 7,21
+main,starbucks,MyCardsOptions,touch,Magic Number,The method contains a magic number: 2,21
+main,starbucks,MyCardsOptions,touch,Magic Number,The method contains a magic number: 7,21
+main,starbucks,MyCardsOptions,touch,Magic Number,The method contains a magic number: 3,21
+main,starbucks,MyCardsOptions,touch,Magic Number,The method contains a magic number: 7,21
+main,starbucks,AppController,setScreen,Complex Method,Cyclomatic complexity of the method is 10,18
+main,starbucks,MyCardsPay,touch,Complex Conditional,The conditional expression (x == 2 && y == 2) || (x == 3 && y == 2) is complex.,12
+main,starbucks,MyCardsPay,touch,Magic Number,The method contains a magic number: 3,12
+main,starbucks,MyCardsPay,touch,Magic Number,The method contains a magic number: 3,12
+main,starbucks,MyCardsPay,touch,Magic Number,The method contains a magic number: 2,12
+main,starbucks,MyCardsPay,touch,Magic Number,The method contains a magic number: 2,12
+main,starbucks,MyCardsPay,touch,Magic Number,The method contains a magic number: 3,12
+main,starbucks,MyCardsPay,touch,Magic Number,The method contains a magic number: 2,12
+main,starbucks,Passcode4,touch,Magic Number,The method contains a magic number: 2,11
+main,starbucks,Passcode4,display,Magic Number,The method contains a magic number: 2,39
+main,starbucks,Passcode4,display,Magic Number,The method contains a magic number: 3,39
+main,starbucks,Passcode4,display,Magic Number,The method contains a magic number: 4,39
+main,starbucks,CardID,keyEventUpdate,Complex Conditional,The conditional expression hasFocus && key.equals("X") && cardId.length() > 0 is complex.,49
+main,starbucks,CardID,keyEventUpdate,Magic Number,The method contains a magic number: 9,49
+main,starbucks,MyCards,touch,Magic Number,The method contains a magic number: 3,23
+main,starbucks,MyCards,touch,Magic Number,The method contains a magic number: 3,23
+main,starbucks,MyCards,touch,Magic Number,The method contains a magic number: 2,23
+main,starbucks,MyCards,touch,Magic Number,The method contains a magic number: 4,23
+main,starbucks,CardCode,keyEventUpdate,Complex Conditional,The conditional expression hasFocus && key.equals("X") && cardCode.length() > 0 is complex.,50
+main,starbucks,CardCode,keyEventUpdate,Magic Number,The method contains a magic number: 3,50
+main,starbucks,Device,getPinOption,Magic Number,The method contains a magic number: 4,84
+main,starbucks,Device,getPinOption,Magic Number,The method contains a magic number: 6,84
+main,starbucks,Device,setPin,Magic Number,The method contains a magic number: 4,109
+main,starbucks,Device,setPin,Magic Number,The method contains a magic number: 6,109
+main,starbucks,Device,setPin,Missing default,The following switch statement is missing a default case: switch (len) {,109
+main,starbucks,Device,reset_screen,Magic Number,The method contains a magic number: 4,240
+main,starbucks,Device,reset_screen,Magic Number,The method contains a magic number: 6,240
+main,starbucks,Device,reset_screen,Missing default,The following switch statement is missing a default case: switch (getPinOption()) {,240
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 5,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 2,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 5,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 5,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 6,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 5,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 2,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 5,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 5,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 6,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 2,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 6,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 6,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 7,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 2,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 7,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 7,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 2,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 7,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 7,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 7,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_payment,Magic Number,The method contains a magic number: 3,260
+main,starbucks,Device,mock_addcard,Magic Number,The method contains a magic number: 5,290
+main,starbucks,Device,mock_addcard,Magic Number,The method contains a magic number: 2,290
+main,starbucks,Device,mock_addcard,Magic Number,The method contains a magic number: 5,290
+main,starbucks,Device,mock_addcard,Magic Number,The method contains a magic number: 3,290
+main,starbucks,Device,mock_addcard,Magic Number,The method contains a magic number: 5,290
+main,starbucks,Device,mock_addcard,Magic Number,The method contains a magic number: 6,290
+main,starbucks,Device,mock_login,Magic Number,The method contains a magic number: 5,303
+main,starbucks,Device,mock_login,Magic Number,The method contains a magic number: 2,303
+main,starbucks,Device,mock_login,Magic Number,The method contains a magic number: 5,303
+main,starbucks,Device,mock_login,Magic Number,The method contains a magic number: 3,303
+main,starbucks,Device,mock_login,Magic Number,The method contains a magic number: 5,303
+main,starbucks,Device,mock_login,Magic Number,The method contains a magic number: 6,303
+main,starbucks,Main,main,Complex Conditional,The conditional expression cmd.equals("a") || cmd.equals("b") || cmd.equals("c")|| cmd.equals("d")|| cmd.equals("e") is complex.,20
+main,starbucks,Main,main,Complex Method,Cyclomatic complexity of the method is 23,20
+main,starbucks,Main,main,Long Method,The method has 169 lines of code.,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 3,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 6,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 6,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 3,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 6,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 3,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 6,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 3,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 6,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 3,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 6,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 7,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 3,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 5,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 7,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 6,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 7,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 3,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 6,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 6,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 7,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 3,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 3,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,Main,main,Magic Number,The method contains a magic number: 2,20
+main,starbucks,ScreenCenterDecorator,display,Magic Number,The method contains a magic number: 2,18
+main,starbucks,ScreenCenterDecorator,display,Magic Number,The method contains a magic number: 2,18
+main,starbucks,ScreenLeftDecorator,display,Magic Number,The method contains a magic number: 2,18
+main,starbucks,ScreenDecorator,name,Magic Number,The method contains a magic number: 2,28
+main,starbucks,Store,touch,Complex Method,Cyclomatic complexity of the method is 9,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 3,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 2,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 3,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 7,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 3,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 2,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 4,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 2,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 5,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 6,23
+main,starbucks,Store,touch,Magic Number,The method contains a magic number: 7,23
+main,starbucks,Settings,touch,Complex Conditional,The conditional expression (x == 1 && y == 1) || (x == 2 && y == 1) || (x == 3 && y == 1) is complex.,21
+main,starbucks,Settings,touch,Magic Number,The method contains a magic number: 2,21
+main,starbucks,Settings,touch,Magic Number,The method contains a magic number: 3,21
+main,starbucks,Screen,addSubComponent,Magic Number,The method contains a magic number: 2,65

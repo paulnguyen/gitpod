@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=IPinAuthObserver
+comment0.text=Pin\ Auth\ Observer\ Interface
+comment1.params=
+comment1.target=void\ authEvent()
+comment1.text=Auth\ Event
+comment2.params=
+comment2.target=void\ invalidPin()
+comment2.text=Invalid\ Event
+numComments=3

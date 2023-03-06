@@ -3,8 +3,6 @@ all: clean
 clean: 
 	find . -name '*.log' -type f -exec rm -f {} \; 
 	rm -rf node_modules
-	rm -f package-lock.json
-	rm -f package.json
 
 setup:
 	nvm install 14.17.3

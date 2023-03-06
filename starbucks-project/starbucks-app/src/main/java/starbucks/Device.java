@@ -172,7 +172,7 @@ public class Device implements IApp, IPinAuthObserver {
         // System.err.println( System.getProperty( "apikey" ) ) ;
         // System.err.println( System.getProperty( "register" ) ) ;
 
-        String apiurl = System.getProperty( "apiurl", "http://localhost:3000" ) ;
+        String apiurl = System.getProperty( "apiurl", "http://localhost:8080" ) ;
         String apikey = System.getProperty( "apikey", "2742a237475c4703841a2bf906531eb0" ) ;
         String register = System.getProperty( "register", "5012349" ) ;    
         theDevice.setProps( "apiurl", apiurl ) ;

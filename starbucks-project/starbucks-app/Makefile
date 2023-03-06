@@ -26,19 +26,10 @@ build: compile
 run: build
 	java -cp build/libs/starbucks-all.jar starbucks.Main 2>debug.log
 
-run-localhost: build
+run-spring: build
 	java -cp build/libs/starbucks-all.jar \
 		-Dapiurl="http://localhost:8080" \
 		-Dapikey="2742a237475c4703841a2bf906531eb0" \
 		-Dregister="5012349" \
 		starbucks.Main 2>debug.log
-
-run-gitpod: build
-	java -cp build/libs/starbucks-all.jar \
-		-Dapiurl="http://https://8080-paulnguyen-gitpod-yfjkgfgvqzp.ws-us87.gitpod.io" \
-		-Dapikey="2742a237475c4703841a2bf906531eb0" \
-		-Dregister="5012349" \
-		starbucks.Main 2>debug.log
-
-
 

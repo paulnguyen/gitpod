@@ -16,7 +16,7 @@ public class AuthController {
     UserService userService;
 
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
-    public String login(){
+    public String login(Model model, @Valid User user, BindingResult bindingResult){
         return "auth/login";
     }
 
@@ -39,6 +39,7 @@ public class AuthController {
             return "auth/register";
         }
 
+        user.setRole(Role.USER);
         userService.saveUser(user);
         model.addAttribute("successMessage", "User registered successfully!");
 

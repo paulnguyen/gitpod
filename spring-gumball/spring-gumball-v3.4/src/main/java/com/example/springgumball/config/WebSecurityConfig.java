@@ -52,9 +52,9 @@ public class WebSecurityConfig {
 
         http.authorizeRequests()
                 // URL matching for accessibility
-                .antMatchers("/", "/login", "/register").permitAll()
+                .antMatchers("/", "/auth/login.css", "/login", "/register", "/h2-console/**").permitAll()
                 .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
-                .antMatchers("/account/**").hasAnyAuthority("USER")
+                .antMatchers("/user/**").hasAnyAuthority("USER")
                 .anyRequest().authenticated()
                 .and()
                 // form login

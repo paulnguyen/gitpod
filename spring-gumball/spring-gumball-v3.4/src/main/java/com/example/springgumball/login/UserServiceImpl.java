@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public void saveUser(User user) {
         String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-//        user.setRole(Role.USER);
+        //user.setRole(Role.USER);
         userRepository.save(user);
     }
 
@@ -37,15 +37,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             userExists = true;
             message = "Email Already Present!";
         }
-        Optional<User> existingUserMobile = userRepository.findByMobile(user.getMobile());
-        if(existingUserMobile.isPresent()){
-            userExists = true;
-            message = "Mobile Number Already Present!";
-        }
-        if (existingUserEmail.isPresent() && existingUserMobile.isPresent()) {
-            message = "Email and Mobile Number Both Already Present!";
-        }
-        System.out.println("existingUserEmail.isPresent() - "+existingUserEmail.isPresent()+"existingUserMobile.isPresent() - "+existingUserMobile.isPresent());
+        System.out.println("existingUserEmail.isPresent() - "+existingUserEmail.isPresent());
         return Arrays.asList(userExists, message);
     }
 

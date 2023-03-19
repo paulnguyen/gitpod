@@ -1,36 +1,36 @@
 # Spring Gumball
 
-### Version 1
+## Version 1
 
 * Session based version
 
-### Version 2
+## Version 2
 
 * Modification of Version 1 to Remove Session
 * Starter Code for Sessionless / HMAC HASH version
 
-### Version 2.1
+## Version 2.1
 
 * Implementation of HMAC HASH version
 
-### Version 3.0
+## Version 3.0
 
 * Implementation of HMAC HASH version (with Injected Config)
 * Added Special Instructions (for testing reflective XSS)
 * With JPA/MySQL Database Support
 * Project Ported over to Spring Boot 2.7
 * With Spring Security Added
-* Default Spring Security Login Form Enabled
-* Default CSRF Protection Enabled
+* Default Spring Security Login Form Enabled (default login: user)
+* Default CSRF Protection Enabled (POST processing will fail)
 
-### Version 3.1 
+## Version 3.1 
 
 * Added Spring Security Bare Bones Configuration Class
 * Added In-Memory User Config for Authentication
 * Disabled CSRF Protection for POST Processing
 * Added Home Controller (Redirects to Console)
 
-### Version 3.2
+## Version 3.2
 
 * Added Support for CSRF Protection
 * Added Login Controller & Custom Login Page
@@ -38,17 +38,22 @@
 	* Need to use Spring Session + Redis
 	* Workaround is to Enabled LB Sticky Sessions
 
-### Version 3.3
+## Version 3.3
 
 * Added Redis In-Memory Database Service
 * Add Spring Session to Replicate CSRF Tokens
 * Configured Spring Session to use Redis as Session Store
 * Added Logout Button to end Session
 
-### Version 3.4 (v3.3 + New User Registration)
+## Version 3.4 (v3.3 + New User Registration)
 
 * Added New User Registration
+	* Used modified version of: 
+	  https://codepen.io/khadkamhn/pen/ZGvPLo
 
+
+
+# REFERENCES
 
 
 ## Cross Site Request Forgery (CSRF)

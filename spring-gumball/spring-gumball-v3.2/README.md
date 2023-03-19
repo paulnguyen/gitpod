@@ -1,7 +1,7 @@
 # Spring Gumball
 
 
-### Version 3.2
+## Version 3.2
 
 * Added Support for CSRF Protection
 * Added Login Controller & Custom Login Page

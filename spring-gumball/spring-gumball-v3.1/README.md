@@ -1,6 +1,6 @@
 # Spring Gumball
 
-### Version 3.1 
+## Version 3.1 
 
 * Port of 3.0 from Spring Boot 2.6 to 2.7
 

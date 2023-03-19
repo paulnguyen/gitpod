@@ -1,6 +1,6 @@
 # Spring Gumball
 
-### Version 1
+## Version 1
 
 * Session based version
 

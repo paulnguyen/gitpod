@@ -12,7 +12,7 @@
 <h1 align="center">Welcome to the Gumball Machine</h1>
 
 <!-- FORM SECTION -->
-<form name="form" th:object="${command}" method="post" th:action="@{/users/gumball}">
+<form name="form" th:object="${command}" method="post" th:action="@{/gumball}">
 
   <input type="hidden" name="state" id="state" th:field="*{state}" />
   <input type="hidden" name="ts" id="ts" th:field="*{timestamp}" />

@@ -1,7 +1,7 @@
 # Spring Gumball
 
 
-### Version 3.3
+## Version 3.3
 
 * Added Redis In-Memory Database Service
 * Add Spring Session to Replicate CSRF Tokens

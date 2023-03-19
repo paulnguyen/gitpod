@@ -1,13 +1,17 @@
 # Spring Gumball
 
 
-### Version 3.4 (v3.3 + New User Registration)
+## Version 3.4 (v3.3 + New User Registration)
 
 * Redis In-Memory Database Service
 * Spring Session to Replicate CSRF Tokens
 * Configured Spring Session to use Redis as Session Store
 * Logout Button to end Session
 * Added New User Registration
+	* Used modified version of: 
+	  https://codepen.io/khadkamhn/pen/ZGvPLo
+
+
 
 User Registration with Sprint Boot
 

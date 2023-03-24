@@ -15,6 +15,8 @@ services:
       - network
     environment:
       MYSQL_ROOT_PASSWORD: "cmpe172"
+      MYSQL_USER: "dbuser"
+      MYSQL_PASS: "dbpass"
     restart: always
   gumball:
     image: spring-gumball

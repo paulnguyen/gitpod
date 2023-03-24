@@ -45,7 +45,7 @@
 * Configured Spring Session to use Redis as Session Store
 * Added Logout Button to end Session
 
-## Version 3.4 (v3.3 + New User Registration)
+## Version 3.4 (New User Registration)
 
 * Added New User Registration
 	* Used modified version of: 

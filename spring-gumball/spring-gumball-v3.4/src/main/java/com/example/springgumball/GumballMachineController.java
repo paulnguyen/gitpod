@@ -158,7 +158,7 @@ public class GumballMachineController {
         model.addAttribute( "message", message ) ;
         model.addAttribute( "server",  host_name + "/" + server_ip ) ;
 
-        return "gumball" ;
+        return "user/gumball" ;
 
     }
 

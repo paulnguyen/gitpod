@@ -29,6 +29,8 @@ services:
       - 8080
     environment:
       MYSQL_HOST: "mysql"
+      MYSQL_DBA: "<tbd>"
+      MYSQL_PWD: "<tbd>"
     restart: always
   lb:
     image: eeacms/haproxy

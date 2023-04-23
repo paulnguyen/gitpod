@@ -1,19 +1,14 @@
-package com.example.springcashier;
-
+package com.example.springreqresclient;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Data
 @RequiredArgsConstructor
-class Command {
+class ConsoleCommand {
 
     private String action ;
     private String message ;
-    private String stores ;
-    private String register ; 
     
 }
-
-
 

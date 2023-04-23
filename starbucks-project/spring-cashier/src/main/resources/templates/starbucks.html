@@ -37,22 +37,19 @@
 </head>
 
 <body onload="selectedStore()">
+
 <h1 align="center">Welcome to Starbucks Reserved</h1>
 
 <!-- FORM SECTION -->
 
-<form name="form" method="post" action="">
+<form name="form" th:object="${command}" method="post" action="">
 
-    <input type="hidden" name="state" id="state" value="{{state}}" />
-    <input type="hidden" name="ts" id="ts" value="{{ts}}" />
-    <input type="hidden" name="hash" id="hash" value="{{hash}}" />
-    <input type="hidden" name="register" id="register" value="{{register}}" />
+  <input type="hidden" name="register" id="register" th:field="*{register}" />
 
     <p>
     <div align="center">
-          <pre id="pre">
-          <span th:text="${message}" />
-          </pre>
+          <textarea readonly id="message" name="message" 
+                    cols="50" rows="13" th:text="${message}"/>
     </div>
     </p>
 
@@ -76,17 +73,26 @@
     <br/>
 
     <p align="center">
-        <input type="submit" name="event" id="btnGetOrder" value="Get Order">
+        <input type="submit" name="action" id="btnGetOrder" value="Get Order">
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="submit" name="event" id="btnPlaceOrder" value="Place Order">
+        <input type="submit" name="action" id="btnPlaceOrder" value="Place Order">
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="submit" name="event" id="btnClearOrder" value="Clear Order">
+        <input type="submit" name="action" id="btnClearOrder" value="Clear Order">
     </p>
 
 </form>
 
 <!-- END FORM SECTION -->
 
+<br/>
+<br/>
+
+<div align="center">
+    <pre>Server Host/IP:  <span th:text="${server}" /></pre>
+</div>
+
+<br/>
+<br/>
 
 </body>
 </html>

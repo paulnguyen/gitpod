@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rabbitmq
+  namespace: default
+  labels:
+    name: rabbitmq
+spec:
+  containers:
+  - name: rabbitmq
+    image: rabbitmq:3-management
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 15672
+      name: console
+      protocol: TCP
+    - containerPort: 4369
+      name: nodes
+      protocol: TCP
+    - containerPort: 5672
+      name: client
+      protocol: TCP
+

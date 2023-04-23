@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spring-payments
+  namespace: default
+  labels:
+    name: spring-payments
+spec:
+  containers:
+    - image: paulnguyen/spring-payments:v2.0
+      name: spring-payments
+      ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP

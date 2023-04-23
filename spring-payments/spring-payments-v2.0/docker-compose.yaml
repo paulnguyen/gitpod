@@ -1,0 +1,53 @@
+
+version: "3"
+
+services:
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - /tmp:/tmp
+    networks:
+      - network   
+    ports:
+      - 3306    
+    networks:
+      - network
+    environment:
+      MYSQL_ROOT_PASSWORD: "cmpe172"
+    restart: always    
+  payments:
+    image: spring-payments
+    depends_on:
+    - mysql    
+    volumes:
+      - /tmp:/tmp
+    networks:
+      - network   
+    environment:
+      MYSQL_HOST: "mysql"      
+    ports:
+      - 8080    
+    restart: always     
+  lb:
+    image: eeacms/haproxy
+    depends_on:
+    - payments
+    ports:
+    - "80:5000"
+    - "1936:1936"
+    environment:
+      BACKENDS: "payments"
+      BACKENDS_PORT: "8080"
+      DNS_ENABLED: "true"
+      COOKIES_ENABLED: "false"
+      LOG_LEVEL: "info"
+    networks:
+      - network
+
+volumes:
+  schemas:
+    external: false
+
+networks:
+  network:
+    driver: bridge

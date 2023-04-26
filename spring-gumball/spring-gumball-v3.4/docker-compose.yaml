@@ -15,8 +15,6 @@ services:
   mysql:
     image: mysql:8.0
     platform: linux/amd64
-    volumes:
-      - /tmp:/tmp
     networks:
       - network
     ports:
@@ -31,8 +29,6 @@ services:
     platform: linux/amd64
     depends_on:
       - mysql
-    volumes:
-      - /tmp:/tmp
     networks:
       - network
     ports:

@@ -13,7 +13,7 @@ build:
 	mvn package
 
 run-jar: build
-	java -jar target/spring-gumball-3.4.jar
+	java -jar target/spring-gumball-3.5.jar
 
 
 # MySQL DB
@@ -23,18 +23,6 @@ mysql:
 
 mysql-shell:
 	docker exec -it mysql bash
-
-
-# Redis DB
-
-redis-local:
-	docker run --platform=linux/amd64 --name redis --network gumball -td -p 6379:6379 redis
-
-redis-official:
-	docker run --platform=linux/amd64 --name redis --network gumball -td -p 6379:6379 redis:4.0
-
-redis-shell:
-	docker exec -it redis bash 
 
 
 # Jumpbox
@@ -68,8 +56,8 @@ docker-shell:
 
 docker-push:
 	docker login
-	docker build --platform=linux/amd64 -t $(account)/spring-gumball:v3.4 .
-	docker push $(account)/spring-gumball:v3.4
+	docker build --platform=linux/amd64 -t $(account)/spring-gumball:v3.5 .
+	docker push $(account)/spring-gumball:v3.5
 
 # Compose
 
@@ -106,6 +94,8 @@ lb-stats:
 
 lb-test:
 	open http://localhost
+
+
 
 
 

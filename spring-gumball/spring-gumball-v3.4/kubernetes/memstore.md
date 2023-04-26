@@ -29,7 +29,7 @@
                     - Private service access
                     - Automatically allocate range
 * Security:         Enable Auth (But, don't enable In-Transit Encryption) 
-* Configuration:    Version 5.0
+* Configuration:    Version 4.0
   
 
 ### After the instance is created, obtain your instance's IP address by following these steps:

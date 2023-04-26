@@ -18,6 +18,19 @@ spec:
       containers:
       - name: spring-gumball
         image: paulnguyen/spring-gumball:v3.4
-        ports:
+        env:
+        - name: MYSQL_HOST
+          value: "<MYSQL_HOST>"   
+        - name: MYSQL_USERNAME
+          value: "<MYSQL_USERNAME>"
+        - name: MYSQL_PASSWORD
+          value: "<MYSQL_PASSWORD>"
+        - name: HMAC_KEY
+          value: "<HMAC_KEY>"
+        - name: REDIS_HOST
+          value: "<REDIS_HOST>"
+        - name: REDIS_PASSWORD
+          value: "<REDIS_PASSWORD>"
+        ports: 
         - containerPort: 8080
 

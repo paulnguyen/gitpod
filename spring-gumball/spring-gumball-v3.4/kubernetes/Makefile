@@ -1,7 +1,7 @@
 
 # Pod
 
-pod-run:
+pod:
 	kubectl apply -f pod.yaml
 
 pod-list:
@@ -21,7 +21,7 @@ pod-logs:
 
 # Deployment
 
-deployment-create:
+deployment:
 	kubectl create -f deployment.yaml --save-config 
 
 deployment-get:
@@ -41,7 +41,7 @@ deployment-delete:
 
 # Service
 
-service-create:
+service:
 	kubectl create -f service.yaml
 
 service-get:
@@ -55,7 +55,7 @@ service-delete:
 
 # Ingress
 
-ingress-apply:
+ingress:
 	kubectl apply -f ingress.yaml
 
 ingress-ip:

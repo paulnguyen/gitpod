@@ -42,7 +42,9 @@
 
 ### Install Redis Client in your "Jump Box"
 
+	apt-get update
 	apt install redis-server
+
 
 
 ### Redis Client

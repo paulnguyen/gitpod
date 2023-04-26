@@ -28,22 +28,26 @@ public class AuthController {
 
     @RequestMapping(value = {"/register"}, method = RequestMethod.POST)
     public String registerUser(Model model, @Valid User user, BindingResult bindingResult){
+
         if(bindingResult.hasErrors()){
-            model.addAttribute("successMessage", "User registered successfully!");
+            System.out.println( "User registration failed!" ) ;
+            model.addAttribute("successMessage", "User registration failed!");
             model.addAttribute("bindingResult", bindingResult);
-            return "auth/login";
+            return "redirect:" + "register?regfailed=true";
         }
+
         List<Object> userPresentObj = userService.isUserPresent(user);
         if((Boolean) userPresentObj.get(0)){
+            System.out.println( "User already registered!" ) ;
             model.addAttribute("successMessage", userPresentObj.get(1));
-            return "auth/login";
+            return "redirect:" + "register?userexists=true";
         }
 
         user.setRole(Role.USER);
         userService.saveUser(user);
         model.addAttribute("successMessage", "User registered successfully!");
 
-        return "auth/login";
+        return "redirect:" + "login";
     }
 }
 

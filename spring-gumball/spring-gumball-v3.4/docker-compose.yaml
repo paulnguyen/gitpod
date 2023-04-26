@@ -8,7 +8,7 @@ services:
     networks:
       - network
     ports:
-      - 6379
+      - "6379:6379"
     networks:
       - network
     restart: always  
@@ -18,7 +18,7 @@ services:
     networks:
       - network
     ports:
-      - 3306
+      - "3306:3306"
     networks:
       - network
     environment:

@@ -59,7 +59,6 @@
 
 ### Redis Documentation
 
-* https://hub.docker.com/_/redis
 * https://redis.io/docs/manual
 * https://redis.io/docs/getting-started
 * https://redis.io/docs/manual/security

@@ -28,7 +28,7 @@
 * Connection:       default 
                     - Private service access
                     - Automatically allocate range
-* Security:         Enable Auth, In-Transit Encryption (with Google Managed Encryption Key)
+* Security:         Don't Enable Auth or In-Transit Encryption 
 * Configuration:    Version 5.0
   
 
@@ -50,6 +50,8 @@
 	redis-cli -h <host> -p 6379
 	auth <password>
 	keys '*'
+	get <key>
+	put <key> <value>
 
 
 ### Redis Client CLI

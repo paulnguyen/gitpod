@@ -29,8 +29,6 @@ spec:
           value: "<HMAC_KEY>"
         - name: REDIS_HOST
           value: "<REDIS_HOST>"
-        - name: REDIS_PASSWORD
-          value: "<REDIS_PASSWORD>"
         ports: 
         - containerPort: 8080
 

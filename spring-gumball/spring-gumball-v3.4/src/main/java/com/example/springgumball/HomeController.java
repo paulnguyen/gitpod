@@ -12,7 +12,7 @@ public class HomeController {
 
     @GetMapping
     public String getAction(Model model) {
-        return "redirect:" + "user/gumball";
+        return "OK" ;
     }
 
 }

@@ -48,10 +48,10 @@ service-get:
 	kubectl get services
 
 service-get-ip:
-	kubectl get service spring-gumball -o wide
+	kubectl get service spring-gumball-service -o wide
 
 service-delete:
-	kubectl delete service spring-gumball
+	kubectl delete service spring-gumball-service
 
 # Ingress
 

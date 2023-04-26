@@ -22,6 +22,9 @@
   - May require setting up a private service connnection
   - 1. Enable Service Networking API
   - 2. Use Automatic IP Range
+* Data Protection: 
+  - Turn OFF "Enable deletion protection"
+  - Turn OFF "Automatic Backups"
 
 
 ### Alternatively, Install MySQL into a GCE (Google Compute Engine VM)

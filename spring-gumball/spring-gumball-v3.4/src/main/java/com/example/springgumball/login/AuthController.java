@@ -23,7 +23,7 @@ public class AuthController {
     @RequestMapping(value = {"/register"}, method = RequestMethod.GET)
     public String register(Model model){
         model.addAttribute("user", new User());
-        return "auth/register";
+        return "auth/login";
     }
 
     @RequestMapping(value = {"/register"}, method = RequestMethod.POST)
@@ -31,12 +31,12 @@ public class AuthController {
         if(bindingResult.hasErrors()){
             model.addAttribute("successMessage", "User registered successfully!");
             model.addAttribute("bindingResult", bindingResult);
-            return "auth/register";
+            return "auth/login";
         }
         List<Object> userPresentObj = userService.isUserPresent(user);
         if((Boolean) userPresentObj.get(0)){
             model.addAttribute("successMessage", userPresentObj.get(1));
-            return "auth/register";
+            return "auth/login";
         }
 
         user.setRole(Role.USER);

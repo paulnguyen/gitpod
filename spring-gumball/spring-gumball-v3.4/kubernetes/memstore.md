@@ -28,7 +28,7 @@
 * Connection:       default 
                     - Private service access
                     - Automatically allocate range
-* Security:         Don't Enable Auth or In-Transit Encryption 
+* Security:         Enable Auth (But, don't enable In-Transit Encryption) 
 * Configuration:    Version 5.0
   
 

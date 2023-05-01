@@ -1,0 +1,98 @@
+
+version: "3"
+
+services:
+  starbucks-client:
+    image: spring-starbucks-client
+    platform: linux/amd64
+    depends_on:
+    - kong
+    ports:
+    - "8081:8081"    
+    networks:
+      - network     
+    environment:
+      API_KEY: "2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ"      
+      API_HOST: "kong:8000/api"      
+      REGISTER: "5012349"      
+    restart: always  
+  kong:
+    image: kong:2.4.0
+    platform: linux/amd64
+    depends_on:
+    - starbucks-service    
+    networks:
+      - network     
+    restart: always  
+    ports:
+    - "80:8000"
+    - "443:8443"
+    - "8001:8001"
+    - "8444:8444"
+    environment:
+      KONG_DATABASE: "off"
+      KONG_PROXY_ACCESS_LOG: "/dev/stdout"
+      KONG_ADMIN_ACCESS_LOG: "/dev/stdout"
+      KONG_PROXY_ERROR_LOG: "/dev/stderr"
+      KONG_ADMIN_ERROR_LOG: "/dev/stderr"
+      KONG_ADMIN_LISTEN: "0.0.0.0:8001, 0.0.0.0:8444 ssl"
+  jumpbox:
+    image: ubuntu
+    platform: linux/amd64
+    networks:
+      - network     
+    restart: always  
+    entrypoint:
+      - "sleep"
+      - "3600"
+  mysql:
+    image: mysql:8.0
+    platform: linux/amd64
+    networks:
+      - network   
+    ports:
+      - 3306   
+    environment:
+      MYSQL_ROOT_PASSWORD: "cmpe172"
+    restart: always     
+  starbucks:
+    image: spring-starbucks-api
+    platform: linux/amd64
+    depends_on:
+    - mysql    
+    networks:
+      - network   
+    ports:
+      - 8080    
+    environment:
+      MYSQL_HOST: "mysql"
+      MYSQL_USER: "root"
+      MYSQL_PASS: "cmpe172"
+      MYSQL_SCHEMA: "starbucks"
+    restart: always     
+  starbucks-service:
+    image: eeacms/haproxy
+    platform: linux/amd64
+    depends_on:
+    - starbucks
+    ports:
+    - "90:5000"
+    - "1936:1936"
+    environment:
+      HTTPCHK: "GET /ping"
+      BACKENDS: "starbucks"
+      BACKENDS_PORT: "8080"
+      DNS_ENABLED: "true"
+      COOKIES_ENABLED: "false"
+      LOG_LEVEL: "info"
+    networks:
+      - network
+
+volumes:
+  schemas:
+    external: false
+
+networks:
+  network:
+    driver: bridge
+

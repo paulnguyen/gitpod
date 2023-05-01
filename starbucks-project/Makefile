@@ -18,3 +18,54 @@ starbucks-app-run:
 		-Dregister="5012349" \
 		starbucks.Main 2>debug.log
 
+# Kong Config
+
+kong-config:
+	http :8001/config config=@kong.yaml
+
+kong-reload:
+	docker exec -it $(id) kong reload
+
+# Compose
+
+network-ls:
+	docker network ls
+
+network-create:
+	docker network create --driver bridge $(network)
+
+network-prune:
+	docker network prune
+
+compose-up:
+	docker-compose up --scale starbucks=2 -d
+
+client-up:
+	docker-compose up -d starbucks-client
+
+kong-up:
+	docker-compose up -d kong	
+
+starbucks-up:
+	docker-compose up -d starbucks
+
+lb-up:
+	docker-compose up -d starbucks-service
+
+jumpbox-up:
+	docker-compose up -d jumpbox
+
+mysql-up:
+	docker-compose up -d mysql
+
+compose-down:
+	docker-compose down
+
+lb-stats:
+	echo "user = admin | password = admin"
+	open http://localhost:1936
+
+lb-test:
+	open http://localhost
+
+

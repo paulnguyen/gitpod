@@ -1,0 +1,21 @@
+
+_format_version: "1.1"
+
+services:
+- name: starbucks
+  protocol: http
+  host: starbucks-service
+  port: 5000
+  path: /
+  plugins:
+  - name: key-auth  
+  routes:
+  - name: api
+    paths:
+    - /api
+    
+consumers:
+- username: apiclient
+  keyauth_credentials:
+  - key: 2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ
+

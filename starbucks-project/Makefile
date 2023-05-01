@@ -40,6 +40,9 @@ network-prune:
 compose-up:
 	docker-compose up --scale starbucks=2 -d
 
+compose-up-1:
+	docker-compose up --scale starbucks=1 -d
+
 client-up:
 	docker-compose up -d starbucks-client
 

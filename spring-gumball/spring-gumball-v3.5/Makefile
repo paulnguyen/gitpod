@@ -16,6 +16,39 @@ run-jar: build
 	java -jar target/spring-gumball-3.5.jar
 
 
+# Gumball Network
+
+network-create:
+	docker network create --driver bridge gumball
+
+network-inspect:
+	docker network inspect gumball
+
+network-ls:
+	docker network ls
+
+network-prune:
+	docker network prune
+
+	
+# RabbitMQ
+
+rabbit-shell:
+	docker exec -it rabbitmq bash 
+
+rabbit:
+	docker run --name rabbitmq \
+	           --network gumball \
+			   -p 8080:15672 -p 4369:4369 -p 5672:5672 \
+			   -d rabbitmq:3-management
+
+rabbit-console:
+	open http://localhost:8080
+
+# Management Console: http://localhost:8080
+# username and password of guest / guest:
+
+
 # MySQL DB
 
 mysql:
@@ -61,15 +94,6 @@ docker-push:
 
 # Compose
 
-network-ls:
-	docker network ls
-
-network-create:
-	docker network create --driver bridge $(network)
-
-network-prune:
-	docker network prune
-
 compose-up:
 	docker-compose up --scale gumball=2 -d
 
@@ -79,8 +103,8 @@ lb-up:
 gumball-up:
 	docker-compose up -d gumball
 
-redis-up:
-	docker-compose up -d redis
+rabbit-up:
+	docker-compose up -d rabbit
 
 mysql-up:
 	docker-compose up -d mysql

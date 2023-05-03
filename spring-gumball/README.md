@@ -54,6 +54,7 @@
 ## Version 3.5
 
 * Switch to Spring Sessions JDBC
+* Added RabbitMQ Support for Fulfilling Orders
 
 
 # REFERENCES

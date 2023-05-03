@@ -2,11 +2,19 @@
 version: "3"
 
 services:
+  rabbit:
+    image: rabbitmq:3-management
+    platform: linux/amd64
+    ports:
+      - "8080:15672"
+      - "4369:4369"
+      - "5672:5672"
+    networks:
+      - network  
+    restart: always    
   mysql:
     image: mysql:8.0
     platform: linux/amd64
-    networks:
-      - network
     ports:
       - "3306:3306"
     networks:
@@ -19,10 +27,10 @@ services:
     platform: linux/amd64
     depends_on:
       - mysql
-    networks:
-      - network
     ports:
       - 8080
+    networks:
+      - network
     environment:
       MYSQL_HOST: "mysql"
     restart: always
@@ -34,14 +42,14 @@ services:
     ports:
       - "80:5000"
       - "1936:1936"
+    networks:
+      - network
     environment:
       BACKENDS: "gumball"
       BACKENDS_PORT: "8080"
       DNS_ENABLED: "true"
       COOKIES_ENABLED: "false"
       LOG_LEVEL: "info"
-    networks:
-      - network
 
 volumes:
   schemas:

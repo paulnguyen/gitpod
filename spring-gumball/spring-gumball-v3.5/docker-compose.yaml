@@ -6,7 +6,7 @@ services:
     image: rabbitmq:3-management
     platform: linux/amd64
     ports:
-      - "8080:15672"
+      - "9090:15672"
       - "4369:4369"
       - "5672:5672"
     networks:
@@ -27,13 +27,41 @@ services:
     platform: linux/amd64
     depends_on:
       - mysql
+      - rabbit
     ports:
       - 8080
     networks:
       - network
     environment:
       MYSQL_HOST: "mysql"
+      MYSQL_USERNAME: "root"
+      MYSQL_PASSWORD: "cmpe172"
+      RABBIT_HOST: "rabbit"
+      RABBIT_USERNAME: "guest"
+      RABBIT_PASSWORD: "guest"
     restart: always
+    deploy:
+      mode: replicated
+      replicas: 2
+  worker:
+    image: spring-gumball-worker
+    platform: linux/amd64
+    depends_on:
+      - mysql
+      - rabbit
+    networks:
+      - network
+    environment:
+      MYSQL_HOST: "mysql"
+      MYSQL_USERNAME: "root"
+      MYSQL_PASSWORD: "cmpe172"
+      RABBIT_HOST: "rabbit"
+      RABBIT_USERNAME: "guest"
+      RABBIT_PASSWORD: "guest"
+    restart: always
+    deploy:
+      mode: replicated
+      replicas: 2
   lb:
     image: eeacms/haproxy
     platform: linux/amd64

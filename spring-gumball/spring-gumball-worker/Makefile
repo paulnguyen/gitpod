@@ -23,12 +23,12 @@ rabbit-shell:
 rabbit:
 	docker run --name rabbitmq \
 	           --network gumball \
-			   -p 8080:15672 -p 4369:4369 -p 5672:5672 \
+			   -p 9090:15672 -p 4369:4369 -p 5672:5672 \
 			   -d rabbitmq:3-management
 console:
-	open http://localhost:8080
+	open http://localhost:9090
 
-# Management Console: http://localhost:8080
+# Management Console: http://localhost:9090
 # username and password of guest / guest:
 
 compile:
@@ -45,8 +45,8 @@ run-jar: build
 
 # Docker
 
-docker-build: jar
-	docker build -t spring-gumball-worker.
+docker-build: build
+	docker build -t spring-gumball-worker .
 	docker images
 
 docker-run: docker-build

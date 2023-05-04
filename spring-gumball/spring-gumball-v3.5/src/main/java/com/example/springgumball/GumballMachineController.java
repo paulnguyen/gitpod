@@ -7,6 +7,7 @@ import java.net.InetAddress;
 import java.util.Optional;
 import java.time.*; 
 import java.util.List;
+import java.util.UUID;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -29,6 +30,11 @@ import lombok.extern.slf4j.Slf4j;
 import com.example.gumballmachine.GumballMachine ;
 import org.springframework.beans.factory.annotation.Value;
 
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+
 
 @Slf4j
 @Controller
@@ -39,13 +45,23 @@ public class GumballMachineController {
     private static final String MODEL_NUMBER = "SB102927" ;
     private static final String SERIAL_NUMBER = "2134998871109" ;
 
+    @Autowired
+    private RabbitTemplate rabbit;
+
+    @Autowired
+    private Queue queue;    
+
     private GumballModel gmachine ;    
 
     @Autowired
     private GumballModelRepository mysql ;
 
     @Autowired
+    private GumballOrderRepository orders ;
+
+    @Autowired
     private GumballQueryRepository query ;
+
     
     private String hmac_sha256(String secretKey, String data) {
         try {
@@ -247,6 +263,14 @@ public class GumballMachineController {
         if ( action.equals("Turn Crank") ) {
             command.setMessage("") ;
             gm.turnCrank() ;
+            GumballOrder order = new GumballOrder() ;
+            String orderNumber = UUID.randomUUID().toString();
+            order.setOrderNumber( orderNumber ) ;
+            order.setInstructions( command.getInstructions() ) ;
+            order.setStatus( "PAID" ) ;
+            order.setColor( "" ) ;
+            orders.save( order ) ;
+            rabbit.convertAndSend(queue.getName(), orderNumber);
             thankyou = "Thank You For Your Order with Instructions: " + command.getInstructions() ;
             System.out.println( thankyou ) ;
             command.setInstructions("") ;

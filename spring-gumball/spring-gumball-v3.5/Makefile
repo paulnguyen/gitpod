@@ -30,7 +30,7 @@ network-ls:
 network-prune:
 	docker network prune
 
-	
+
 # RabbitMQ
 
 rabbit-shell:
@@ -39,13 +39,13 @@ rabbit-shell:
 rabbit:
 	docker run --name rabbitmq \
 	           --network gumball \
-			   -p 8080:15672 -p 4369:4369 -p 5672:5672 \
+			   -p 9090:15672 -p 4369:4369 -p 5672:5672 \
 			   -d rabbitmq:3-management
 
 rabbit-console:
-	open http://localhost:8080
+	open http://localhost:9090
 
-# Management Console: http://localhost:8080
+# Management Console: http://localhost:9090
 # username and password of guest / guest:
 
 
@@ -95,13 +95,16 @@ docker-push:
 # Compose
 
 compose-up:
-	docker-compose up --scale gumball=2 -d
+	docker-compose up --scale gumball=4 -d
 
 lb-up:
 	docker-compose up -d lb
 
 gumball-up:
 	docker-compose up -d gumball
+
+worker-up:
+	docker-compose up -d worker
 
 rabbit-up:
 	docker-compose up -d rabbit

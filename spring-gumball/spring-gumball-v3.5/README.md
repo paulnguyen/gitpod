@@ -39,3 +39,120 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
 ```
 
 
+
+
+## Appendix A - Makefile (RabbitMQ Docker)
+
+```
+docker-clean:
+  docker stop rabbitmq
+  docker rm rabbitmq
+
+network-create:
+  docker network create --driver bridge springdemo
+
+network-inspect:
+  docker network inspect springdemo
+
+network-ls:
+  docker network ls
+
+shell:
+  docker exec -it rabbitmq bash 
+
+rabbit:
+  docker run --name rabbitmq \
+             --network springdemo \
+         -p 8080:15672 -p 4369:4369 -p 5672:5672 \
+         -d rabbitmq:3-management
+console:
+  open http://localhost:8080
+
+# Management Console: http://localhost:8080
+# username and password of guest / guest:
+
+```
+
+
+## Appendix B - Deploying Single Node POD to GKE
+
+* https://www.rabbitmq.com/networking.html#ports
+
+* rabbitmq-pod.yaml
+
+```
+kubectl create -f rabbitmq-pod.yaml
+```
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rabbitmq
+  namespace: default
+  labels:
+    name: rabbitmq
+spec:
+  containers:
+  - name: rabbitmq
+    image: rabbitmq:3-management
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 15672
+      name: console
+      protocol: TCP
+    - containerPort: 4369
+      name: nodes
+      protocol: TCP
+    - containerPort: 5672
+      name: client
+      protocol: TCP
+```
+
+* rabbitmq-console.yaml
+
+```
+kubectl create -f rabbitmq-console.yaml
+```
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-console
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80 
+    targetPort: 15672
+    protocol: TCP
+  selector:
+    name: rabbitmq
+```
+
+* rabbitmq-service.yaml
+
+```
+kubectl create -f rabbitmq-service.yaml
+```
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-service
+  namespace: default
+spec:
+  type: ClusterIP
+  ports:
+  - port: 5672 
+    targetPort: 5672
+    protocol: TCP
+  selector:
+    name: rabbitmq
+```
+
+
+
+

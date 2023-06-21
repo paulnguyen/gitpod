@@ -1,4 +1,3 @@
-
 version: "3"
 
 services:
@@ -51,4 +50,3 @@ volumes:
 networks:
   network:
     driver: bridge
-
